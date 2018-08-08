@@ -1,2 +1,4 @@
 class Airport < ApplicationRecord
+
+
 end

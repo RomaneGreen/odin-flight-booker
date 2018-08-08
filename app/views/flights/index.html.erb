@@ -1,21 +1,6 @@
-
 <h1>Odin Flight Booker</h1>
 
+<%= form_for (@flight) do |f|%>
+<%= f.submit 'Search flights'%>
 
-<h4>From:</h4>
-<%= form_for(:airport)do |f| %>
-  <%= f.collection_select :ids,Airport.all,:id,:code, include_blank: true %>
-  <%= f.submit %>
 <% end %>
-
-<h4>To:</h4>
-<%= form_for(:airport)do |f| %>
-  <%= f.collection_select :ids,Airport.all,:id,:code, include_blank: true %>
-  <%= f.submit %>
-<% end %>
-
-<h4>Number of passengers</h4>
-<%=select_tag "people", raw("<option>1</option><option>2</option><option>3</option><option>4</option>")%>
-
-
-<h4>Flight dates:</h4>

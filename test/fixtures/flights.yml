@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  airport: one
+  flight_date: 2018-07-28 12:34:05
+  flight_duration: MyString
+
+two:
+  airport: two
+  flight_date: 2018-07-28 12:34:05
+  flight_duration: MyString

@@ -2,7 +2,12 @@ class FlightsController < ApplicationController
 
   def index
 
-@airport = Airport.all
+@flight = Flight.new
+
   end
+
+def create
+
+end
 
 end
