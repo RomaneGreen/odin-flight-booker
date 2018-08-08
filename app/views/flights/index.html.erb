@@ -1,7 +1,6 @@
 <h1>Odin Flight Booker</h1>
 
-<%= form_for (@flight) do |f|%>
-
+<%= form_for(@flight, url: flights_path, method: :get) do |f|%>
 <%= f.collection_select(:airport_id, Airport.all, :id, :code, :prompt => "Departure") %>
 
 <%= f.collection_select(:airport_id, Airport.all, :id, :code, :prompt => "Arrival") %>

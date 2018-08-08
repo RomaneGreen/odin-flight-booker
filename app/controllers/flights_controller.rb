@@ -4,9 +4,11 @@ class FlightsController < ApplicationController
 
 @flight = Flight.new
 
+
   end
 
 def create
+
 
 end
 
