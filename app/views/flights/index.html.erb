@@ -6,7 +6,10 @@
 
 <%= f.collection_select(:airport_id, Airport.all, :id, :code, :prompt => "Arrival") %>
 
-<%= select_tag 'passengers', options_for_select([1,2,3,4]), :include_blank => true %>
+<!-- strftime("%m/%d/%Y") -->
+<%= select_tag 'passengers', options_for_select([1,2,3,4]), :include_blank => false %>
+
+<%= select_tag "flight_dates", options_from_collection_for_select(Flight.all,:flight_date,:flight_date_formatted) %>
 
 <%= f.submit 'Search flights'%>
 
