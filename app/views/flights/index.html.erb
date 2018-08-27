@@ -1,20 +1,18 @@
 <h1>Odin Flight Booker</h1>
 
 <%= form_for(@flight, url: flights_path, method: :get) do |f|%>
-<%= f.collection_select(:airport_id, Airport.all, :id, :code, :prompt => "Departure") %>
 
-<%= f.collection_select(:airport_id, Airport.all, :id, :code, :prompt => "Arrival") %>
+<%= f.collection_select(:departure, Departure.all, :code,:code, :prompt => "Departure") %>
+
+<%= f.collection_select(:airport, Airport.all, :code, :code, :prompt => "Arrival") %>
 
 <!-- strftime("%m/%d/%Y") -->
 <%= select_tag 'passengers', options_for_select([1,2,3,4]), :include_blank => false %>
 
 <%= select_tag "flight_dates", options_from_collection_for_select(Flight.all,:flight_date,:flight_date_formatted) %>
 
-<%= f.submit 'Search flights'%>
+<%= f.submit 'Search flights', :value => "Search flights"%>
 
 <% end %>
 
-<%=@airport_id%>
-<%=@passengers%>
-<%=@flight_date%>
-<%=@flight_id%>
+<!-- <% if !@commit.blank? %> <%=render 'flights/form' %> <% end %> -->
