@@ -1,33 +1,42 @@
-<p>I am the new booking path's view</p>
+<div class="card text-center cardtext2" style="width: 29rem;">
+  <div class="card-body">
+    <h5 class="card-title font-weight-bold">My Flight</h5>
+    <p class="card-text txt">View and enter your information to confirm flight</p>
 
-<%= form_for(@booking) do |f|%>
+    <%= form_for(@booking) do |f|%>
 
-<%= f.hidden_field :passengers, value:params[:passengers] %>
-<%= f.hidden_field :flight_id, value:"4" %>
-<%= f.hidden_field :flight_date, value:params[:flight_dates] %>
-<%= f.hidden_field :flight_arrival, value:params[:flight][:airport] %>
-<%= f.hidden_field :flight_departure, value:params[:flight][:departure] %>
+    <%= f.hidden_field :passengers, value:params[:passengers] %>
+    <%= f.hidden_field :flight_id, value:"4" %>
+    <%= f.hidden_field :flight_date, value:params[:flight_dates] %>
+    <%= f.hidden_field :flight_arrival, value:params[:flight][:airport] %>
+    <%= f.hidden_field :flight_departure, value:params[:flight][:departure] %>
 
-<p>Flight id</p>
-<%= f.label :flight_id ,value:@flight_id %>
-<p>Date</p>
-<%= f.label :flight_dates ,value:@flight_date[0..10] %>
-<br>
-<p>Departing From-</p>
-<%= f.label :departure ,value: @flight_departure %>
-<br>
-<p>Arrival Destination-</p>
-<%= f.label :airport ,value:@flight_arrival %>
-<br>
-<%=f.fields_for :passengers do |p| %>
-<p>Your info-</p>
-<%= p.label :name%>
-<%= p.text_field :name%>
-<%= p.label :email%>
-<%= p.text_field :email%>
+    <p class="font-weight-bold">Flight id</p>
+    <%= f.label :flight_id ,value:@flight_id,class: "txt" %>
+
+    <p class="font-weight-bold">Date</p>
+    <%= f.label :flight_dates ,value:@flight_date[0..10],class: "txt" %>
+    <br>
+    <br>
+    <p class="font-weight-bold ">Departing From-</p>
+    <%= f.label :departure ,value: @flight_departure,class: "txt" %>
+    <br>
+    <br>
+    <p class="font-weight-bold">Arrival Destination-</p>
+    <%= f.label :airport ,value:@flight_arrival,class: "txt" %>
+    <br>
+    <%=f.fields_for :passengers do |p| %>
+
+    <%= p.label :name,class:"font-weight-bold"%>
+    <%= p.text_field :name,required: :true%>
+    <br>
+    <%= p.label :email,class:"font-weight-bold"%>
+    <%= p.text_field :email ,required: :true%>
+  <% end %>
+  <br><br>
+  <br>
+  <%= f.submit 'Book Flight', class: "btn btn-primary"%>
+
 <% end %>
-<br><br>
-<br>
-<%= f.submit 'Book Flight'%>
-
-<% end %>
+</div>
+</div>

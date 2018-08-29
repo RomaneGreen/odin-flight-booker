@@ -8,18 +8,27 @@
 <%= f.hidden_field :flight_arrival, value:params[:flight][:airport] %>
 <%= f.hidden_field :flight_departure, value:params[:flight][:departure] %>
 
-<p>Flight id</p>
-<%= f.label :flight_id ,value:@flight_id %>
-<p>Date</p>
-<%= f.label :flight_dates ,value:@flight_date[0..10] %>
-<br>
-<p>Departing From-</p>
-<%= f.label :departure ,value: @flight_departure %>
-<br>
-<p>Arrival Destination-</p>
-<%= f.label :airport ,value:@flight_arrival %>
-<br>
-<%= f.radio_button("id","flighdsfvc")%>
-<%= f.submit 'Select flight'%>
+<div class="card text-center cardtext" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title font-weight-bold">Flight id</h5>
 
-<% end %>
+    <%= f.label :flight_id ,value:@flight_id %>
+    <p class="font-weight-bold">Date</p>
+    <%= f.label :flight_dates ,value:@flight_date[0..10] %>
+    <br>
+
+    <p class="font-weight-bold">Departing From
+    </p>
+    <%= f.label :departure ,value: @flight_departure %>
+    <br>
+    <br>
+    <p class="font-weight-bold">Arrival Destination-</p>
+    <%= f.label :airport ,value:@flight_arrival%>
+    <br>
+    <br>
+    <%= f.radio_button("id","flighdsfvc")%>
+    <%= f.submit 'Select flight', class: "btn btn-primary"%>
+
+  <% end %>
+</div>
+</div>

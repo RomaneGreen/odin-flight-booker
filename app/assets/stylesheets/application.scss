@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url('https://fonts.googleapis.com/css?family=Alice');
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+@import "bootstrap";
+
+.indexhead {
+  margin-top: 4rem;
+  text-align: center;
+  color: white;
+}
+
+.container1 {
+  margin-top: 12rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+}
+
+.cardtext {
+  margin: auto;
+  // border: 1px solid black;
+  background-color: #685d36;
+  color: white;
+}
+
+.cardtext2 {
+  margin: auto;
+  border: 1px solid black;
+  background-color: #685d36;
+  margin-top: 3rem;
+}
+
+.jumbotron {
+  background-color: transparent !important;
+}
+
+body {
+  background-image: image-url('aeronew.jpg');
+}
+
+.formstyle {
+  color: white;
+  background-color: #685d36;
+}
+
+.txt {
+  font-family: 'Alice', serif;
+  font-size: 20px;
+}
